@@ -18,6 +18,11 @@ public class ProductRestController {
     @Autowired
     private IProductService productService;
 
+    // Otra manera de hacer inyeccion de dependencia, y no es necesaria la anotación @Autowired
+    // public ProductRestController(IProductService productService) {
+    //     this.productService = productService;
+    // }
+
     @GetExchange("")
     public List<Product> list(){
         return productService.findAll();

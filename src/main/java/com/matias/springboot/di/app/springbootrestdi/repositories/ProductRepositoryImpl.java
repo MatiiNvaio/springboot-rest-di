@@ -3,10 +3,14 @@ package com.matias.springboot.di.app.springbootrestdi.repositories;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.matias.springboot.di.app.springbootrestdi.models.Product;
 
+@Primary
+@RequestScope
 @Repository
 public class ProductRepositoryImpl implements IProductRespository{
 
@@ -14,9 +18,7 @@ public class ProductRepositoryImpl implements IProductRespository{
 
     // con el constructor lleno la lista de productos
     public ProductRepositoryImpl() {
-
         this.data = Arrays.asList(
-
             new Product(1L, "Monitor Samsung 24'", 2500L),
             new Product(2L, "Mouse Logitec MS-D 3", 1300L),
             new Product(3L, "Memoria RAM Corsair 16GB", 500L),
