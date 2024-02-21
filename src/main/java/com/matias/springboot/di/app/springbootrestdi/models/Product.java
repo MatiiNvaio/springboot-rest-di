@@ -1,5 +1,6 @@
 package com.matias.springboot.di.app.springbootrestdi.models;
 
+import com.fasterxml.jackson.databind.JavaType;
 
 public class Product implements Cloneable{
 

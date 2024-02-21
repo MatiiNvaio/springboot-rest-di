@@ -3,7 +3,6 @@ package com.matias.springboot.di.app.springbootrestdi.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,6 @@ import com.matias.springboot.di.app.springbootrestdi.repositories.IProductRespos
 public class ProductServiceImpl implements IProductService{
     
     @Autowired
-    // @Qualifier("repositoryFoo")
     private IProductRespository productRepository;
 
     @Value("${config.double.tax}")
@@ -30,7 +28,6 @@ public class ProductServiceImpl implements IProductService{
     
     @Override
     public List<Product> findAll(){
-
         // con stream().map() podemos acceder a los objetos y manipularlos
         return productRepository.findAll().stream().map(p -> {
             Double priceTax = p.getPrice() * tax;
@@ -39,15 +36,12 @@ public class ProductServiceImpl implements IProductService{
             Product newProduct = (Product) p.clone();
             newProduct.setPrice(priceTax.longValue());
             return newProduct;
-            // p.setPrice(priceImp.longValue());
-            // return p;
         }).toList(); // convierte el stream en una lista, asi podemos retornar
     }
  
     @Override
     public Product findById(Long id){
         Product product = productRepository.findById(id);
-
         return product;
     }
 

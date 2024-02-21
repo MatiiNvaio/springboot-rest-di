@@ -9,7 +9,7 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.matias.springboot.di.app.springbootrestdi.models.Product;
 
-@Primary
+// @Primary
 @RequestScope
 @Repository
 public class ProductRepositoryImpl implements IProductRespository{

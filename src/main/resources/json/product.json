@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Xbox Serie X",
+        "price": 1300
+    },
+    {
+        "id": 2,
+        "name": "Mouse Logitec MS-D 3",
+        "price": 250
+    },
+    {
+        "id": 3,
+        "name": "Notebook Lenovo",
+        "price": 1000
+    },
+    {
+        "id": 4,
+        "name": "Silla gamer Corsair",
+        "price": 320
+    }
+]
